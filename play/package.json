@@ -1,0 +1,17 @@
+{
+  "private": true,
+  "name": "play",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite --host",
+    "build": "gulp -f build/gulpfile.ts"
+  },
+  "keywords": [],
+  "author": "Jvb",
+  "license": "MIT",
+  "devDependencies": {
+    "vite": "^2.7.10"
+  }
+}

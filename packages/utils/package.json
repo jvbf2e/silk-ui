@@ -1,0 +1,8 @@
+{
+  "name": "@jvbf2e/silk-utils",
+  "version": "1.0.0",
+  "license": "MIT",
+  "peerDependencies": {
+    "vue": "^3.2.0"
+  }
+}

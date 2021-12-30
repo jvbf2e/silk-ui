@@ -1,0 +1,22 @@
+{
+  "private": true,
+  "packageManager": "pnpm@6.24.3",
+  "workspaces": [
+    "packages/*",
+    "play"
+  ],
+  "engines": {
+    "node": ">= 16"
+  },
+  "author": "Jvb",
+  "license": "ISC",
+  "scripts": {
+    "dev": "pnpm -C play dev"
+  },
+  "dependencies": {
+    "vue": "^3.2.26"
+  },
+  "devDependencies": {
+    "@jvbf2e/eslint-config-vue": "^1.0.0"
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "name": "@jvbf2e/eslint-config-vue",
+  "version": "1.0.0",
+  "description": "ESLint Vue configuration for JS projects based on airbnb and Prettier configs",
+  "main": "index.js",
+  "scripts": {
+    "format": "prettier --write **/*.js",
+    "lint": "eslint ./ --ignore-path .gitignore",
+    "lint:fix": "npm run lint -- --fix"
+  },
+  "keywords": [
+    "javascript",
+    "eslint",
+    "eslintconfig",
+    "eslint-config",
+    "airbnb-config",
+    "prettier-config",
+    "react",
+    "hooks",
+    "react-hooks",
+    "vsilk"
+  ],
+  "author": "Jvb",
+  "license": "MIT",
+  "prettier": "@jvbf2e/prettier-config",
+  "dependencies": {
+    "@jvbf2e/prettier-config": "^1.0.0",
+    "eslint": "^8.5.0",
+    "prettier": "^2.5.1"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.8.1",
+    "@typescript-eslint/parser": "^5.8.1",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-typescript": "^0.14.0",
+    "eslint-plugin-vue": "^8.2.0",
+    "typescript": "^4.5.4",
+    "vue-eslint-parser": "^8.0.1"
+  },
+  "peerDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.8.1",
+    "@typescript-eslint/parser": "^5.8.1",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-typescript": "^0.14.0",
+    "eslint-plugin-vue": "^8.2.0",
+    "typescript": "^4.5.4",
+    "vue-eslint-parser": "^8.0.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jvbf2e/eslint-config-react.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jvbf2e/eslint-config-react/issues"
+  },
+  "homepage": ""
+}

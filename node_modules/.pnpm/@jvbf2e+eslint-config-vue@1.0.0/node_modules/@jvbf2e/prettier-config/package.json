@@ -1,0 +1,23 @@
+{
+  "name": "@jvbf2e/prettier-config",
+  "version": "1.0.0",
+  "description": "Prettier config",
+  "main": "index.js",
+  "keywords": [
+    "javascript",
+    "prettier",
+    "prettier-config",
+    "prettierconfig",
+    "vsilk"
+  ],
+  "author": "Jvb",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jvbf2e/prettier-config.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jvbf2e/prettier-config/issues"
+  },
+  "homepage": "https://github.com/jvbf2e/prettier-config#readme"
+}
