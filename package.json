@@ -11,12 +11,31 @@
   "author": "Jvb",
   "license": "ISC",
   "scripts": {
-    "dev": "pnpm -C play dev"
+    "dev": "pnpm -C play dev",
+    "prepare": "husky install",
+    "commit": "git-cz"
   },
   "dependencies": {
     "vue": "^3.2.26"
   },
   "devDependencies": {
-    "@jvbf2e/eslint-config-vue": "^1.0.0"
+    "@commitlint/config-conventional": "^16.0.0",
+    "@jvbf2e/eslint-config-vue": "^1.0.0",
+    "commitizen": "^4.2.4",
+    "commitlint": "^16.0.1",
+    "commitlint-config-cz": "^0.13.3",
+    "cz-conventional-changelog": "^3.3.0",
+    "cz-customizable": "^6.3.0",
+    "eslint": "^8.6.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "husky": "^7.0.4",
+    "lint-staged": "^12.1.5",
+    "prettier": "^2.5.1"
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-customizable"
+    }
   }
 }
