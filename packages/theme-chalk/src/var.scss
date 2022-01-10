@@ -1,0 +1,14 @@
+@use 'sass:map';
+
+// CSS3 var
+@use 'common/var' as *;
+@use 'mixins/var' as *;
+
+:root {
+  --s-color-white: #{$color-white};
+  --s-color-black: #{$color-black};
+
+  @each $type in $types {
+    --s-color-#{$type}: #{map.get($colors, $type)};
+  }
+}

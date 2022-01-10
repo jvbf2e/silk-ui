@@ -1,0 +1,117 @@
+@use './mixins/mixins.scss' as *;
+
+@font-face {
+  font-family: 's-icons';
+  src: url('./fonts/iconfont.woff2') format('woff2'),
+    url('./fonts/iconfont.woff') format('woff'),
+    url('./fonts/iconfont.ttf') format('truetype');
+}
+
+[class^='#{$namespace}-icon'],
+[class*='#{$namespace}-icon'] {
+  font-family: 's-icons' !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.#{$namespace}-icon-fenlei:before {
+  content: '\e811';
+}
+
+.#{$namespace}-icon-diqiu:before {
+  content: '\e814';
+}
+
+.#{$namespace}-icon-shouye:before {
+  content: '\e81e';
+}
+
+.#{$namespace}-icon-sync:before {
+  content: '\e786';
+}
+
+.#{$namespace}-icon-menu:before {
+  content: '\e7f4';
+}
+
+.#{$namespace}-icon-icon-test7:before {
+  content: '\e658';
+}
+
+.#{$namespace}-icon-icon-test8:before {
+  content: '\e659';
+}
+
+.#{$namespace}-icon-icon-test9:before {
+  content: '\e65a';
+}
+
+.#{$namespace}-icon-icon-test10:before {
+  content: '\e65b';
+}
+
+.#{$namespace}-icon-icon-test11:before {
+  content: '\e65c';
+}
+
+.#{$namespace}-icon-icon-test12:before {
+  content: '\e65d';
+}
+
+.#{$namespace}-icon-icon-test13:before {
+  content: '\e65e';
+}
+
+.#{$namespace}-icon-icon-test14:before {
+  content: '\e65f';
+}
+
+.#{$namespace}-icon-help-filling:before {
+  content: '\e68a';
+}
+
+.#{$namespace}-icon-news-filling:before {
+  content: '\e68b';
+}
+
+.#{$namespace}-icon-notification-filling:before {
+  content: '\e68c';
+}
+
+.#{$namespace}-icon-user-filling:before {
+  content: '\e68d';
+}
+
+.#{$namespace}-icon-setting-filling:before {
+  content: '\e68e';
+}
+
+.#{$namespace}-icon-icon-test6:before {
+  content: '\e655';
+}
+
+.#{$namespace}-icon-icon-test:before {
+  content: '\e63c';
+}
+
+.#{$namespace}-icon-icon-test1:before {
+  content: '\e63e';
+}
+
+.#{$namespace}-icon-icon-test2:before {
+  content: '\e63f';
+}
+
+.#{$namespace}-icon-icon-test3:before {
+  content: '\e642';
+}
+
+.#{$namespace}-icon-icon-test4:before {
+  content: '\e64d';
+}
+
+.#{$namespace}-icon-icon-test5:before {
+  content: '\e64e';
+}

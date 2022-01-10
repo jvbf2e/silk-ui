@@ -1,0 +1,61 @@
+/* Element Chalk Variables */
+@use 'sass:math';
+@use 'sass:map';
+@use 'color' as *;
+
+// types
+$types: primary, success, warning, danger, error, info;
+
+// sizes
+$sizes: 2xs, xs, sm, md, lg, xl, 2xl;
+
+// Color
+$colors: () !default;
+$colors: map.merge(
+  (
+    'white': #fff,
+    'black': #000,
+    'primary': map.get($blues, '500'),
+    'success': map.get($greens, '500'),
+    'warning': map.get($yellows, '500'),
+    'danger': map.get($reds, '500'),
+    'error': map.get($reds, '500'),
+    'info': map.get($grays, 'cool', '500'),
+  ),
+  $colors
+);
+
+$color-white: map.get($colors, 'white') !default;
+$color-black: map.get($colors, 'black') !default;
+$color-primary: map.get($colors, 'light-5', 'primary') !default;
+$color-success: map.get($colors, 'success') !default;
+$color-warning: map.get($colors, 'warning') !default;
+$color-danger: map.get($colors, 'danger') !default;
+$color-error: map.get($colors, 'error') !default;
+$color-info: map.get($colors, 'info') !default;
+
+// Background
+/// color|1|Background Color|4
+$bg-color: #f5f7fa !default;
+
+// Input
+$input-height: () !default;
+$input-height: map.merge(
+  (
+    'default': 40px,
+    'medium': 36px,
+    'small': 32px,
+    'mini': 28px,
+  ),
+  $input-height
+);
+
+// footer
+$footer: () !default;
+$footer: map.merge(
+  (
+    'padding': 0 20px,
+    'height': 60px,
+  ),
+  $footer
+);

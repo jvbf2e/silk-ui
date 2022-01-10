@@ -1,0 +1,26 @@
+@use 'sass:map';
+
+@use '../common/var' as *;
+
+@mixin button-plain($color, $type) {
+  --s-button-text-color: var(--s-color-#{$type});
+  --s-button-bg-color: #{map.get($colors, $type, '50')};
+  --s-button-border-color: #{map.get($colors, $type, '500')};
+
+  --s-button-hover-text-color: var(--s-color-white);
+  --s-button-hover-bg-color: var(--s-color-#{$type});
+  --s-button-hover-border-color: var(--s-color-#{$type});
+
+  --s-button-active-text-color: var(--s-color-white);
+  --s-button-active-border-color: var(--s-color-#{$type});
+}
+
+@mixin button-variant($type) {
+  --s-button-text-color: var(--s-color-white);
+  --s-button-hover-text-color: var(--s-color-white);
+  --s-button-disabled-text-color: var(--s-color-white);
+
+  &.is-plain {
+    @include button-plain(var(--s-button-bg-color), $type);
+  }
+}

@@ -1,0 +1,339 @@
+@use 'sass:map';
+
+@use '../common/var' as *;
+@use '../common/color' as *;
+@use '../mixins/mixins' as *;
+@use '../mixins/var' as *;
+@use '../mixins/button' as *;
+
+// Button
+$button: () !default;
+$button: map.merge(
+  (
+    // base
+    'border-radius': 4px,
+    'font-size': 14px,
+    'font-weight': inherit,
+    // default
+    'font-color': map.get($grays, 'blue', '900'),
+    'border-color': map.get($grays, 'blue', '300'),
+    'bg-color': var(--s-color-white),
+    // default - hover
+    'hover-color': map.get($grays, 'blue', '50'),
+    // default - active
+    'active-color': map.get($grays, 'blue', '600'),
+    // states
+    'default-light-0': map.get($grays, 'blue', '50'),
+    'default-light-2': map.get($grays, 'blue', '200'),
+    'default-light-4': map.get($grays, 'blue', '400'),
+    'default-light-5': map.get($grays, 'blue', '500'),
+    'default-light-6': map.get($grays, 'blue', '600'),
+    'primary-light-0': map.get($blues, '50'),
+    'primary-light-1': map.get($blues, '100'),
+    'primary-light-2': map.get($blues, '200'),
+    'primary-light-4': map.get($blues, '400'),
+    'primary-light-5': map.get($blues, '500'),
+    'primary-light-6': map.get($blues, '600'),
+    'success-light-0': map.get($greens, '50'),
+    'success-light-1': map.get($greens, '100'),
+    'success-light-2': map.get($greens, '200'),
+    'success-light-4': map.get($greens, '400'),
+    'success-light-5': map.get($greens, '500'),
+    'success-light-6': map.get($greens, '600'),
+    'warning-light-0': map.get($yellows, '50'),
+    'warning-light-1': map.get($yellows, '100'),
+    'warning-light-2': map.get($yellows, '200'),
+    'warning-light-4': map.get($yellows, '400'),
+    'warning-light-5': map.get($yellows, '500'),
+    'warning-light-6': map.get($yellows, '600'),
+    'danger-light-0': map.get($reds, '50'),
+    'danger-light-1': map.get($reds, '100'),
+    'danger-light-2': map.get($reds, '200'),
+    'danger-light-4': map.get($reds, '400'),
+    'danger-light-5': map.get($reds, '500'),
+    'danger-light-6': map.get($reds, '600')
+  ),
+  $button
+);
+
+// Border
+$border: () !default;
+$border: map.merge(
+  (
+    'width-base': 1px,
+    'style-base': solid,
+    'color-base': var(--s-button-border-color),
+    'base': var(--s-border-width-base) var(--s-border-style-base)
+      var(--s-border-color-base),
+  ),
+  $border
+);
+
+@include b(button) {
+  @include set-component-css-var('border', $border);
+  @include set-component-css-var('button', $button);
+}
+
+$border-style: () !default;
+$border-style: map.merge(
+  (
+    'solid': 'solid',
+    'dashed': 'dashed',
+    'none': 'none',
+  ),
+  $border-style
+);
+
+$border-color: () !default;
+$border-color: map.merge(
+  (
+    'light': #e4e7ed,
+    'base': #dcdfe6,
+    'lighter': #ebeef5,
+    'extra-light': #f2f6fc,
+  ),
+  $border-color
+);
+
+$border-radius: () !default;
+$border-radius: map.merge(
+  (
+    'small': 4px,
+    'base': 8px,
+    'round': 16px,
+    'circle': 100%,
+  ),
+  $border-radius
+);
+// Border
+$border-width-base: 1px !default;
+$border-style-base: solid !default;
+$border-color-hover: var(--s-text-color-placeholder) !default;
+$border-base: $border-width-base $border-style-base
+  map.get($border-color, 'base') !default;
+
+/// borderRadius|1|Radius|0
+@include b(button) {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 4px 16px;
+  color: var(--s-button-font-color);
+  font-size: var(--s-button-font-size);
+  font-weight: var(--s-button-font-weight);
+  line-height: 1;
+  border: var(--s-border-base);
+  border-radius: var(--s-button-border-radius);
+  outline: none;
+  background-color: var(--s-button-bg-color);
+  transition: 0.1s;
+  box-sizing: border-box;
+  white-space: nowrap;
+  user-select: none;
+  cursor: pointer;
+
+  & + & {
+    margin-left: 10px;
+  }
+
+  // Primary
+  @include m(primary) {
+    color: var(--s-color-white);
+    border-color: transparent;
+    background-color: var(--s-button-primary-light-5);
+
+    &:hover,
+    &:focus {
+      background-color: var(--s-button-primary-light-4);
+    }
+
+    &:active {
+      background-color: var(--s-button-primary-light-6);
+    }
+
+    &:disabled {
+      background-color: var(--s-button-primary-light-2);
+    }
+
+    @each $state in 'success', 'warning', 'danger' {
+      @include when($state) {
+        background-color: var(--s-button-#{$state}-light-5);
+
+        &:hover,
+        &:focus {
+          background-color: var(--s-button-#{$state}-light-4);
+        }
+
+        &:active {
+          background-color: var(--s-button-#{$state}-light-6);
+        }
+
+        &:disabled {
+          background-color: var(--s-button-#{$state}-light-2);
+        }
+      }
+    }
+  }
+
+  // Secondary
+  @include m(secondary) {
+    color: var(--s-button-primary-light-5);
+    border-color: transparent;
+    background-color: var(--s-button-primary-light-0);
+
+    &:hover,
+    &:focus {
+      color: var(--s-button-primary-light-4);
+    }
+
+    &:active {
+      color: var(--s-button-primary-light-6);
+    }
+
+    &:disabled {
+      color: var(--s-button-primary-light-2);
+    }
+
+    @each $state in 'success', 'warning', 'danger' {
+      @include when($state) {
+        color: var(--s-button-#{$state}-light-5);
+        background-color: var(--s-button-#{$state}-light-0);
+
+        &:hover,
+        &:focus {
+          color: var(--s-button-#{$state}-light-4);
+        }
+
+        &:active {
+          color: var(--s-button-#{$state}-light-6);
+        }
+
+        &:disabled {
+          color: var(--s-button-#{$state}-light-2);
+        }
+      }
+    }
+  }
+
+  // Default
+  @include m(default) {
+    color: var(--s-button-default-light-5);
+    border-color: var(--s-button-default-light-4);
+    background-color: var(--s-color-white);
+
+    &:hover,
+    &:focus {
+      color: var(--s-button-primary-light-5);
+      border-color: var(--s-button-primary-light-5);
+    }
+
+    &:active {
+      color: var(--s-button-primary-light-6);
+      border-color: var(--s-button-primary-light-6);
+    }
+
+    &:disabled {
+      color: var(--s-button-default-light-2);
+      border-color: var(--s-button-default-light-2);
+    }
+
+    @each $state in 'success', 'warning', 'danger' {
+      @include when($state) {
+        border-color: var(--s-button-#{$state}-light-5);
+        color: var(--s-button-#{$state}-light-5);
+
+        &:hover,
+        &:focus {
+          color: var(--s-button-#{$state}-light-4);
+          border-color: var(--s-button-#{$state}-light-4);
+        }
+
+        &:active {
+          color: var(--s-button-#{$state}-light-6);
+          border-color: var(--s-button-#{$state}-light-6);
+        }
+
+        &:disabled {
+          color: var(--s-button-#{$state}-light-2);
+          border-color: var(--s-button-#{$state}-light-2);
+        }
+      }
+    }
+  }
+
+  // Text
+  @include m(text) {
+    color: var(--s-button-default-light-5);
+    border-color: transparent;
+    background-color: var(--s-color-white);
+
+    &:hover,
+    &:focus {
+      background-color: var(--s-button-default-light-0);
+    }
+
+    &:active {
+      color: var(--s-button-default-light-6);
+      background-color: var(--s-button-default-light-0);
+    }
+
+    &:disabled {
+      color: var(--s-button-default-light-2);
+      background-color: var(--s-color-white);
+    }
+
+    @each $state in 'success', 'warning', 'danger' {
+      @include when($state) {
+        color: var(--s-button-#{$state}-light-5);
+
+        &:hover,
+        &:focus {
+          background-color: var(--s-button-#{$state}-light-0);
+        }
+
+        &:active {
+          color: var(--s-button-#{$state}-light-6);
+        }
+
+        &:disabled {
+          color: var(--s-button-#{$state}-light-2);
+          background-color: var(--s-color-white);
+        }
+      }
+    }
+  }
+
+  // Link
+  @include m(link) {
+    border-color: transparent;
+    color: var(--s-button-primary-light-5);
+    background-color: transparent;
+
+    &:hover,
+    &:focus {
+      color: var(--s-button-primary-light-4);
+    }
+
+    &:active {
+      color: var(--s-button-primary-light-6);
+    }
+
+    &:disabled {
+      color: var(--s-button-primary-light-2);
+    }
+  }
+
+  @include when(loading) {
+    position: relative;
+    pointer-events: none;
+  }
+
+  @include when(disabled) {
+    &,
+    &:hover,
+    &:focus {
+      cursor: not-allowed;
+    }
+  }
+}
